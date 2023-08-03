@@ -1,0 +1,97 @@
+
+*{
+    padding: 0;
+}
+
+:root{
+    --fondo-rojo:red;
+    --fondo-gris: rgb(179, 168, 189);
+}
+
+body{ 
+    display: flex;
+    flex-wrap: wrap;
+}
+header{
+    flex: 1 1 90%;
+    font-size: 200%;
+    text-align: center;
+    background-color: var(--fondo-rojo);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+header>h1{
+    flex: 1 1 60%;
+    
+}
+header>img{
+    flex: 1 1 20%;
+    max-width: 100px;
+}
+
+main{
+    flex: 1 1 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+main>h1{
+    flex: 1 1 90%;
+    text-align: center;
+    
+}
+
+main>img{
+    flex: 1 1 30%;
+    max-width: 300px;
+    background-color: blue;
+}
+
+main>form{
+    flex: 1 1 50%;
+    
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    
+}
+
+footer{
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--fondo-rojo);
+    border-radius: 10px;
+    
+}
+
+.footer-texto{
+    z-index: 3;
+    flex: 1 1 55%;
+}
+footer>.footer-texto>h1,h2{  
+    margin-top: 2%;
+    font-size: 110%;
+    text-align: center;
+    
+    
+}
+.footer-redes{
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer-redes>a>i{
+    font-size: 200%;
+    
+}

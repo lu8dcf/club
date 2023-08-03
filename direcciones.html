@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario de Registro</title>
+</head>
+<body>
+  <form>
+    <!-- Otros campos del formulario de registro aquí -->
+    
+    <label for="provincia">Provincia:</label>
+    <select id="provincia" onchange="cargarCiudades()">
+      <option value="" disabled selected>Seleccione una provincia</option>
+    </select>
+
+    <label for="ciudad">Ciudad:</label>
+    <select id="ciudad"></select>
+
+    <button type="submit">Registrarse</button>
+  </form>
+
+  <script>
+    function cargarProvincias() {
+      fetch('https://apis.datos.gob.ar/georef/api/provincias?orden=nombre')
+        .then(response => response.json())
+        .then(data => {
+          const provinciaSelect = document.getElementById('provincia');
+          data.provincias.forEach(provincia => {
+            const option = document.createElement('option');
+            option.value = provincia.id;
+            option.text = provincia.nombre;
+            provinciaSelect.appendChild(option);
+          });
+        })
+        .catch(error => console.log('Error al cargar las provincias: ', error));
+    }
+
+    function cargarCiudades() {
+      const provinciaId = document.getElementById('provincia').value;
+      const ciudadSelect = document.getElementById('ciudad');
+
+      // Limpiar las opciones actuales de ciudades
+      ciudadSelect.innerHTML = '';
+      
+      if (provinciaId !== '') {
+        fetch(`https://apis.datos.gob.ar/georef/api/municipios?provincia=${provinciaId}&max=500&orden=nombre`)
+          .then(response => response.json())
+        //   .then(data => console.log(data))
+          .then(data => {
+            data.municipios.forEach(ciudad => {
+              const option = document.createElement('option');
+              option.value = ciudad.id;
+              option.text = ciudad.nombre;
+              ciudadSelect.appendChild(option);
+            });
+          })
+          .catch(error => console.log('Error al cargar las ciudades: ', error));
+      }
+    }
+
+    cargarProvincias();
+  </script>
+</body>
+</html>
