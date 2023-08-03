@@ -1,13 +1,12 @@
 
 <?php include("./includes/head.php") ?>
 <?php include("./includes/ingreso.php") ?>
-
+<head>
+<link href="./css/login.css" rel="stylesheet">
+</head>
 <body>
-
-  <header>
-    <h1>Club Atlético Sporting</h1>
-    <img src="./img/escudo.png" alt="Imagen no encontrada">
-  </header>
+  <?php include("./includes/header.php") ?>
+  
 
   <main>
     <h1>Ingreso</h1>
