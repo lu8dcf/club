@@ -36,7 +36,7 @@ main{
     flex: 1 1 90%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     
 }
 
@@ -49,7 +49,7 @@ main>h1{
 main>img{
     flex: 1 1 30%;
     max-width: 300px;
-    background-color: blue;
+    
 }
 
 main>form{
