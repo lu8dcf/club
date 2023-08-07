@@ -8,13 +8,13 @@
         background-image: url("https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png");
         }
     </style>
-
+    <link rel="stylesheet" href="../css/menu-hamburguesa.css">
     <link rel="stylesheet" href="../css/menu.css?3">
     </head>
 
     <body>
         <?php include("../includes/header2.php") ?>
-        <header>
+        <header class="encabezado-menu" >
         
             <?php
                 // Inicia la sesion del usuario
@@ -84,59 +84,32 @@
                 }
                 ?>
 
-        </header>
+        </header>        
+        <nav>            
+            <ul >
+                <li >
+                    <a  href="../socio/socio.php">Socios</a>
+                </li>
+                                
+                <li >
+                    <a href="#">Actividades</a>
+                </li>
+                <li >
+                    <a  href="#">Carteleria</a>
+                </li>
+                <li >
+                    <a  href="#">Salones</a>
+                </li>
+                <li >
+                    <a  href="#">Tesoreria</a>
+                </li>
+            </ul>
+        </nav>
 
-        <main>
-
-            <div class="row">
-                <!-- Menu hamburguesa -->
-                <aside class="col-md-2 col-sm-3">
-
-                    <nav class="navbar navbar-expand-xxl navbar-light bg-light">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="../socio/socio.php">Socios</a>
-                                </li>
-                                 
-                                <li class="nav-item adentro">
-                                    <a class="nav-link adentro" href="#">Actividades</a>
-                                </li>
-                                <li class="nav-item adentro">
-                                    <a class="nav-link adentro" href="#">Carteleria</a>
-                                </li>
-                                <li class="nav-item adentro">
-                                    <a class="nav-link adentro" href="#">Salones</a>
-                                </li>
-                                <li class="nav-item adentro">
-                                    <a class="nav-link adentro" href="#">Tesoreria</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </aside>
-
-                <div class="col-md-10 col-sm-9 col-xs-12 ">
-                    <div class="row">
-                        <div class="col-md-12 medio">
-                            <div class="col-lg- " style="border: none;">
-                                <h1>Administración </h1>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col-md-2 col-md-4 col-xs-6 azul"></div>
-                        <div class="col-md-2 col-md-4 col-xs-6 azul"></div>
-                        <div class="col-md-4 col-md-4 col-xs-6 azul"></div>
-                        <div class="col-xs-12 col-md-12 rojo "></div>
-                        <div class="container-fluid mt-3 tabla "></div>
-
-                    </div>
-                </div>
-            </div>
+        <main >
+            <p>administracion</p>
+            <p>supongo que algo deberiamos de mostrar aca</p>
+                
         </main>
 
         <!-- js actualizado 5/23 -->
@@ -146,6 +119,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </body>
 </html>

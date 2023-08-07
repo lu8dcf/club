@@ -1,0 +1,68 @@
+/***********************************************
+
+ Autores: Alonso Heber - Alonso Lucia
+
+***********************************************/
+/* Estilos Generales */
+* {
+	margin: 0;
+	padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root{
+
+    --fondo-claro:#FFF6E0;
+    --fondo-mas-oscuro:#D8D9DA;
+    --fondo-oscuro:#272829;
+    --texto-blanco:#fff8f3;
+    --texto-llamativo: red;
+    --header-height: calc(80px + 1vw);
+}
+
+
+.encabezado-menu{
+    flex: 1 1 100%;
+    background-color: var(--fondo-mas-oscuro);
+}
+
+
+nav{
+    flex: 1 1 25%;
+    background-color: var(--fondo-mas-oscuro);
+    height: auto;
+}
+
+nav>ul{
+    margin: 5%;
+}
+nav>ul>li{
+    margin: 5%;
+    margin-top: 6%;
+    background-color: none;
+    border-radius: 10px;
+    text-decoration: none;
+    list-style: none;
+
+}
+nav>ul>li>a{
+    font-size: 1.4em;
+    text-decoration: none;
+    margin-left: 10%;
+    color: var(--texto-llamativo);
+}
+nav>ul>li>a:hover{
+    color: var(--texto-blanco);
+    text-decoration: none;
+
+}
+nav>ul>li:hover{
+    background-color: var(--fondo-oscuro);
+    transition: 0.5s;
+}
+
+main{
+    flex: 1 1 75%;
+    background-color: var(--fondo-claro);
+}
+

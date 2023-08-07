@@ -1,0 +1,101 @@
+/***********************************************
+
+ Autores: Alonso Heber - Alonso Lucia
+
+***********************************************/
+/* Estilos Generales */
+* {
+	margin: 0;
+	padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --fondo-suave:rgb(142, 135, 121);
+    --fondo-gris: rgb(179, 168, 189);
+    --fondo-oscuro:  rgb(99, 33, 33);
+    --texto-claro: beige;
+
+    --fondo-claro:#FFF6E0;
+    --fondo-mas-oscuro:#D8D9DA;
+    --fondo-oscuro:#272829;
+    --texto-blanco:#fff8f3;
+    --texto-llamativo: red;
+    --header-height: calc(80px + 1vw);
+}
+nav{
+    flex: 1 1 25%;
+    background-color: var(--fondo-mas-oscuro);
+    height: auto;
+}
+nav>ul{
+    margin: 5%;
+}
+nav>ul>li{
+    margin: 5%;
+    margin-top: 6%;
+    background-color: none;
+    border-radius: 10px;
+    text-decoration: none;
+    list-style: none;
+
+}
+nav>ul>li>a{
+    font-size: 1.4em;
+    text-decoration: none;
+    margin-left: 10%;
+    color: var(--texto-llamativo);
+}
+nav>ul>li>a:hover{
+    color: var(--texto-blanco);
+    text-decoration: none;
+
+}
+nav>ul>li:hover{
+    background-color: var(--fondo-oscuro);
+    transition: 0.5s;
+}
+
+
+main{
+    flex: 1 1 75%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;    si lo dejamos en "normal", la tabla se va adaptar a la pantalla en modo completa */
+}
+main>div{
+    display: flex;
+    justify-content: space-around;
+}
+main>div>h1{
+    margin: 2% 0 2% 0;
+}
+main>div>button{
+    margin: 2% 0 2% 0;
+    padding: 1%;
+    background-color: var(--fondo-suave);
+    cursor: pointer;
+}
+
+
+main>table{
+    background-color: var(--fondo-suave);
+    border-color: var(--fondo-oscuro);
+    border-style:groove;
+}
+main>table>thead>tr>th{
+    align-items: center;
+    background-color: var(--fondo-oscuro);
+    color: var(--texto-claro);
+    font-size: 1em;
+    margin: 0 15%;
+}
+
+main>table>tbody>tr:nth-of-type(2n-1){
+    filter: brightness(1.5);
+    background-color: var(--fondo-suave);
+}
+main>table>tbody>tr:nth-of-type(2n){
+    filter: brightness(1.8);
+    background-color: var(--fondo-suave);
+}
