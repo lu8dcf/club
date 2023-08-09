@@ -1,6 +1,7 @@
   <?php include("../includes/head2.php") ?>
       <head>
         <link href="../css/socio.css?3" rel="stylesheet">
+        <link href="../css/botones.css?4" rel="stylesheet">
         <link rel="stylesheet" href="../css/socio.css">
 
       </head>
@@ -10,39 +11,44 @@
   <nav>            
     <ul >
       <li >
-        <a  href="../socio/socio.php">Socios</a>
+        <a  href="alta.php">Agregar</a>
       </li>
       <li >
-        <a href="#">Actividades</a>
+        <a  href="#">Imprimir</a>
       </li>
       <li >
-        <a  href="#">Carteleria</a>
+        <form method="POST" action="" class="formBusca">
+                  
+          
+          <input type="text" name="textoBusqueda" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Busqueda">
+          <button class="botonBusca" type="submit" name="busqueda" id="button-addon1"></button>
+        </form>
+      </li>
+      
+      <li >
+        <a  href="#"></a>
       </li>
       <li >
-        <a  href="#">Salones</a>
-      </li>
-      <li >
-        <a  href="#">Tesoreria</a>
+        <a  href="../menu/menu.php">Menu</a>
       </li>
     </ul>
   </nav>
-    <main class="main-socio">
-      <h1>Listado de Socios </h1>
+  <main class="main-socio">
+      <h1>Socios</h1>
 
-        <table>
-                        <thead>
-                          <tr>
-                            <th>ID SOCIO</th>
-                            <th>DNI</th>
-                            <th>NOMBRE y APELLIDO</th>
-                            <th>CATEGORIA</th>
-                                                     
-                          </tr>
-                        </thead>
-                        <tbody>
+      <table>
+        <thead>
+          <tr>
+            <th>ID SOCIO</th>
+            <th>DNI</th>
+            <th>NOMBRE y APELLIDO</th>
+            <th>CATEGORIA</th>
+                                      
+          </tr>
+        </thead>
+        <tbody>
 
-                        <!-- funcion en php de la obtencion de listado de socios -->
-
+          <!-- funcion en php de la obtencion de listado de socios -->
           <?php
               // Conexión a la base de datos SQLite
               $db = new SQLite3('../db/club.db');
@@ -63,8 +69,7 @@
                     // Realizar la consulta solo si se han proporcionado los valores de filtro
                     if (!empty($busca)) {
                         $query = "SELECT * FROM socio WHERE nSocio LIKE '%$busca%' OR nombre LIKE '%$busca%' OR apellido LIKE '%$busca%'OR dni LIKE '%$busca%'";
-                
-                        
+                                    
                     }
                 }
                 //--------------------------------------------------------------------------------
@@ -113,54 +118,56 @@
 
 
 
-                        <tr>
-                            <td><?php echo $nSocio; ?></td>
-                            <td><?php echo $dni; ?></td>
-                            <td><?php echo $nomYape; ?></td>
-                            <td><?php echo $textoCategoria; ?></td>
-                            <!-- <td><?php echo $textoEstado; ?></td> -->
+          <tr>
+            <td><?php echo $nSocio; ?></td>
+            <td><?php echo $dni; ?></td>
+            <td><?php echo $nomYape; ?></td>
+            <td><?php echo $textoCategoria; ?></td>
+            <!-- <td><?php echo $textoEstado; ?></td> -->
 
-                                <td>  
-                                <form id=vista-socio method="POST"  action="./vista_socio/perfil_socio.php" target="popup" onsubmit="vista()">
-                                        <!-- guia para saber a que dni pertenece el boton -->
-                                    <input type="hidden" name="nSocio" value="<?php echo $nSocio; ?>">
-                                    <button  type="submit" id="button-addon1" >Perfil</button>
-                                </form>
-                                </td>
+            <td class=boton>  
+              <form id=vista-socio method="POST"  action="./vista_socio/perfil_socio.php" target="popup" onsubmit="vista()">
+                      <!-- guia para saber a que dni pertenece el boton -->
+                  <input type="hidden" name="nSocio" value="<?php echo $nSocio; ?>">
+                  <button class=botonVer type="submit" title="Descripcion" ></button>
+              </form>
+            </td>
 
-                                <td>
-                                <form id=modificar-socio method="POST" action="./funciones_menu/modificar_socio.php" target="popup" onsubmit="modifica()">
-                                    
-                                    <input type="hidden" name="nSocio" value="<?php echo $nSocio; ?>">
-                                    <button  type="submit" id="button-addon1" >Modificar</button>
-                                </form>
-                                </td>
-
-                                <td>
-                                <form id=eliminar-socio method="POST" action="./funciones_menu/eliminar_socio.php" target="popup" onsubmit="elimina()">
-                                        
-                                    <input type="hidden" name="nSocio" value="<?php echo $nSocio; ?>">
-                                    <button  type="submit" id="button-addon1">Eliminar</button>
-                                </form>
-                                </td>
-
-                            
-                        </tr>
-                  <?php
-                  }
-                  ?>
-                        </tbody>
-                      </table>
-                    </div>
+            <td class=boton>
+              <form id=modificar-socio method="POST" action="./vista_socio/perfil_socio.php" target="popup" onsubmit="modifica()">
                   
-                  <?php
+                  <input type="hidden" name="nSocio" value="<?php echo $nSocio; ?>">
+                  <button  class=botonEditar type="submit" title="Modificar" ></button>
+              </form>
+            </td>
+
+            <td class=boton>
+              <form id=eliminar-socio method="POST" action="eliminarSocio.php" target="popup" onsubmit="elimina()">
+                      
+                  <input type="hidden" name="nSocio" value="<?php echo $nSocio; ?>">
+                  <button  class=botonElimina type="submit" title="Eliminar" ></button>
+              </form>
+            </td>
+
+                    
+          </tr>
+
+            <?php
+            }
+            ?>
+        </tbody>
+      </table>
+                    
                   
-              } else {
-                  echo 'No se encontraron registros.';
-              }
-              
-              // Cerrar la conexión a la base de datos
-              $db->close();
-              ?>
-    </main>
+      <?php
+                  
+        } else {
+            echo 'No se encontraron registros.';
+        }
+        
+        // Cerrar la conexión a la base de datos
+        $db->close();
+      ?>
+  </main>
+  <script src="../js/socio.js"> </script>
 </body>

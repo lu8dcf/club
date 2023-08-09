@@ -1,0 +1,48 @@
+/***********************************************
+
+ Autores: Alonso Heber - Alonso Lucia
+
+***********************************************/
+/* Estilos Generales */
+* {
+	margin: 0;
+	padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    outline: none;   /* saca los rebordes */
+}
+
+:root{
+    --fondo-suave:rgb(142, 135, 121);
+    --fondo-gris: rgb(179, 168, 189);
+    --fondo-oscuro:  rgb(99, 33, 33);
+    --texto-claro: beige;
+
+    --fondo-claro:#FFF6E0;
+    --fondo-mas-oscuro:#D8D9DA;
+    --fondo-oscuro:#272829;
+    --texto-blanco:#fff8f3;
+    --texto-llamativo: red;
+    --header-height: calc(80px + 1vw);
+}
+
+body{
+    background-color: var(--fondo-claro);
+    background: url(../img/escudo-fondo.png);
+    background-position: center;
+    background-size:cover ;
+    background-repeat: no-repeat ;
+    flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;  /* vh viewport height , largo del dispositivo*/
+}
+main{
+    background-color: var(--fondo-claro);
+    width: 50% ;
+    border-radius: 7px;
+    text-align: center;
+    padding: 30px 35px 0 35px;
+    
+}
+

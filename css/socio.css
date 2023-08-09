@@ -1,11 +1,7 @@
-/***********************************************
 
- Autores: Alonso Heber - Alonso Lucia
-
-***********************************************/
 /* Estilos Generales */
 * {
-	margin: 0;
+	margin: 0%;
 	padding: 0;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -24,7 +20,7 @@
     --header-height: calc(80px + 1vw);
 }
 nav{
-    flex: 1 1 25%;
+    flex: 1 1 20%;
     background-color: var(--fondo-mas-oscuro);
     height: auto;
 }
@@ -58,24 +54,16 @@ nav>ul>li:hover{
 
 
 main{
-    flex: 1 1 75%;
+    flex: 1 1 65%;
     display: flex;
     flex-direction: column;
     /* align-items: center;    si lo dejamos en "normal", la tabla se va adaptar a la pantalla en modo completa */
 }
-main>div{
-    display: flex;
-    justify-content: space-around;
+
+main>h1{
+   padding: 1% ;
 }
-main>div>h1{
-    margin: 2% 0 2% 0;
-}
-main>div>button{
-    margin: 2% 0 2% 0;
-    padding: 1%;
-    background-color: var(--fondo-suave);
-    cursor: pointer;
-}
+
 
 
 main>table{
