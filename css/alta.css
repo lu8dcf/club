@@ -21,13 +21,14 @@
     --fondo-mas-oscuro:#D8D9DA;
     --fondo-oscuro:#272829;
     --texto-blanco:#fff8f3;
-    --texto-llamativo: red;
+    --texto-llamativo: #ff0000;
     --header-height: calc(80px + 1vw);
+    --fondo-formulario:#fdf9ee;
 }
 
 body{
-    background-color: var(--fondo-claro);
-    background: url(../img/escudo-fondo.png);
+    background-color: var(--fondo-oscuro);
+    /* background: url(../img/escudo-fondo.png); */
     background-position: center;
     background-size:cover ;
     background-repeat: no-repeat ;
@@ -38,11 +39,152 @@ body{
     min-height: 100vh;  /* vh viewport height , largo del dispositivo*/
 }
 main{
-    background-color: var(--fondo-claro);
-    width: 50% ;
+    background-color: var(--fondo-formulario);
+    width: 30% ;
+    height: auto;
     border-radius: 7px;
     text-align: center;
     padding: 30px 35px 0 35px;
-    
+
 }
+main>header{
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0 0 4% 0;
+}
+
+/* FORMULARIO */
+
+.form-principal{
+    width: 100%;
+    overflow: hidden;
+}
+
+form{
+    display: flex;
+    width: 200%;
+    height: 450px;
+}
+main>.form-principal>form>.pagina{
+    width: 100%;
+}
+main>.form-principal>form>.pagina>h1{
+    text-align: left;
+    font-size: 1.3em;
+    font-weight: 300;
+    margin: 0 0 10% 0;
+}
+main>.form-principal>form>.pagina>.campo{
+    height: 10%;
+    width: 50%;
+    margin: 7% 0;
+    display: flex;
+    position: relative;
+}
+
+main>.form-principal>form>.pagina>.campo>label{
+    position: absolute;
+    top: -40%;
+    font-weight: 400;
+    font-size: 0.8em;
+    font-style: italic;
+    float: left;
+    text-align: left;
+    width: 100%;
+}
+main>.form-principal>form>.pagina>.campo>input{
+    background: none;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--fondo-gris);
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 0 0 0 5%;
+}
+main>.form-principal>form>.pagina>.campo>select{
+    background: none;
+    min-width: 150%;
+    height: 100%;
+    border: 1px solid var(--fondo-gris);
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 0 0 0 5%;
+}
+
+
+/* BOTONES DE FORMULARIO */
+
+main>.form-principal>form>.pagina>.campo>button{
+    width: 100%;
+    height: calc(100% + 5px);
+    margin-top: 2%;
+    border: none;
+    background-color: var(--fondo-oscuro);
+    border-radius: 7px;
+    color: var(--texto-blanco);
+    font-weight: 500;
+    letter-spacing: 1px ;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+}
+main>.form-principal>form>.pagina>.campo>button:hover{
+    background-color: var(--texto-llamativo);
+}
+
+main>.form-principal>form>.pagina>.campo{
+    width: 100%;
+}
+
+main>.form-principal>form>.pagina>.botones{
+    margin-top: 2%!important;
+}
+main>.form-principal>form>.pagina>.botones>.volver{
+    margin-right: 2%;
+    font-size: 1em;
+}
+
+main>.form-principal>form>.pagina>.botones>.volver{
+    margin-left: 2%;
+    font-size: 1em;
+}
+
+
+/* BARRA DE PROGRESO */
+
+main>.progreso{
+    display: flex;
+    margin: 5% 0;
+}
+
+main>.progreso>.paso{
+    text-align: center;
+    width: 100%;
+}
+main>.progreso>.paso>p{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--fondo-oscuro);
+    margin-bottom: 2%;
+}
+main>.progreso>.paso>img{
+    width: 10%;
+    height: auto;
+}
+main>.progreso>.paso>.num{
+    position: relative;
+    width: 15%;
+    height: 50%;
+    border: 2px solid var(--fondo-oscuro);
+    border-radius:50% ;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 27px;
+}
+
+
+
+
 

@@ -17,8 +17,89 @@
 </head>
 <body>
     <main>
-        <h2>Alta de Socio</h2>
-        <p>me falta poner todo el formulario, ya averigue para hacerlo por pasos</p>
+        <header>Alta de Socio</header>
+
+        <div class="progreso" >
+            <div class="paso" >
+                <p>Nac.</p>
+                <div class="num" >
+                    <span>1</span>
+                </div>
+                <img src="../img/verificado.png" alt="imagen check">
+            </div>
+            <div class="paso" >
+                <p>Ubi</p>
+                <div class="num" >
+                    <span>2</span>
+                </div>
+                <img src="../img/verificado.png" alt="imagen check">
+            </div>
+        </div>
+
+        <div class="form-principal" >
+            <form method="POST" action="#">
+
+                <!-- PAGINA 1 -->
+                <div class="pagina">
+                    <h1>Identificación</h1>
+                    <div class="campo">
+                        <label for="nom">Nombres: </label>
+                        <input type="text" name="" id="nom" placeholder="Nombres">
+                    </div>
+                    <div class="campo">
+                        <label for="ape">Apellidos: </label>
+                        <input type="text" name="" id="ape" placeholder="Apellidos">
+                    </div>
+                    <div class="campo">
+                        <label for="dni">DNI: </label>
+                        <input type="number" name="" id="dni" placeholder="DNI">
+                    </div>
+                    <div class="campo">
+                        <label for="nac">Fecha de Nacimiento: </label>
+                        <input type="date" name="" id="nac" min="1923-01-01" >
+                    </div>
+                    <div class="campo" >
+                    <button >Siguiente</button>
+                    </div>
+                </div>
+
+                <!-- PAGINA 2 -->
+
+                <div class="pagina">
+                    <h1>Ubicación</h1>
+                    <div class="campo">
+                        <label for="pais">Pais: </label>
+                        <select name="" id="pais">
+                            <option value="-1" disabled selected >Selecciona una opción</option>
+                            <option value="0">opcion Pais</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="prov">Provincia: </label>
+                        <select name="" id="prov">
+                            <option value="-1" disabled selected >Selecciona una opción</option>
+                            <option value="0">opcion Provincia</option>
+                        </select>                    
+                    </div>
+                    <div class="campo">
+                        <label for="ciud">Ciudad: </label>
+                        <select name="" id="ciud">
+                            <option value="-1" disabled selected >Selecciona una opción</option>
+                            <option value="0">opcion Ciudad</option>
+                        </select>                    
+                    </div>
+                    <div class="campo">
+                        <label for="cod">Codigo Postal: </label>
+                        <input type="number" name="" id="cod" placeholder="CP">
+                    </div>
+                    
+                    <div class="campo botones" >
+                        <button class="volver-pag1 volver" >Atrás</button>
+                        <button class="adelante-pag3 adelante" >Siguiente</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </main>
 
 
