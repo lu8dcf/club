@@ -36,6 +36,8 @@ main>table>tbody>tr>td>form>button,.botonBusca{
 
 .botonBusca {
     background-image: url('../img/busqueda.png');
+    width: 20px;
+    height: 20px;
 }
 .formBusca{
     justify-content: center;

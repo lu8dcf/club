@@ -56,17 +56,27 @@ nav>ul>li:hover{
 main{
     flex: 1 1 65%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
     /* align-items: center;    si lo dejamos en "normal", la tabla se va adaptar a la pantalla en modo completa */
 }
 
 main>h1{
+   flex: 1 1 40%;
    padding: 1% ;
+   
+}
+
+main>form{
+    flex: 1 1 40%;
+    margin: 0 5% 0 0;
+    align-items: center;
 }
 
 
 
 main>table{
+    flex: 1 1 90%;
     background-color: var(--fondo-suave);
     border-color: var(--fondo-oscuro);
     border-style:groove;

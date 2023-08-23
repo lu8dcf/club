@@ -60,13 +60,14 @@ main>header{
     overflow: hidden;
 }
 
-form{
+.form-principal>form{
     display: flex;
-    width: 200%;
+    width: 400%;
     height: 450px;
 }
 main>.form-principal>form>.pagina{
-    width: 100%;
+    width: 25%;
+    transition: margin-left 0.3s ease-in-out;
 }
 main>.form-principal>form>.pagina>h1{
     text-align: left;
@@ -103,7 +104,7 @@ main>.form-principal>form>.pagina>.campo>input{
 }
 main>.form-principal>form>.pagina>.campo>select{
     background: none;
-    min-width: 150%;
+    width: 100%;
     height: 100%;
     border: 1px solid var(--fondo-gris);
     border-radius: 5px;
@@ -161,10 +162,11 @@ main>.progreso{
 main>.progreso>.paso{
     text-align: center;
     width: 100%;
+    position: relative;
 }
 main>.progreso>.paso>p{
-    font-size: 1.2em;
-    font-weight: 500;
+    font-size: 1em;
+    font-weight: 400;
     color: var(--fondo-oscuro);
     margin-bottom: 2%;
 }
@@ -174,17 +176,146 @@ main>.progreso>.paso>img{
 }
 main>.progreso>.paso>.num{
     position: relative;
-    width: 15%;
+    width: 20%;
     height: 50%;
     border: 2px solid var(--fondo-oscuro);
     border-radius:50% ;
     display: inline-block;
-    font-weight: 300;
-    font-size: 1em;
+    font-weight: 500;
+    font-size: 0.9em;
     line-height: 27px;
+    transition: 0.3s;
+}
+main>.progreso>.paso>.num>span{
+    font-weight: 500;
+    font-size: 0.9em;
+    line-height: 23px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/*  check */
+main>.progreso>.paso>img{
+    display: none;
+    position: absolute;
+    width: 18px;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%,-50%);
+}
+
+/* pseudoelemento lineas que conectan el progreso*/
+
+main>.progreso>.paso>.num:before,
+main>.progreso>.paso>.num:after{
+    position: absolute;
+    content: '';
+    width: 70px;
+    height: 17%; 
+    bottom: 43%;
+    right: -78px;
+    background-color: var(--fondo-oscuro);
 }
 
 
+/* pseudoclase  el last-child va a tomar el 
+ultimo elemento del pseudoelemento y en este caso lo va hacer desaparecer */
+main>.progreso>.paso:last-child>.num:before,
+main>.progreso>.paso:last-child>.num:after{
+    display: none;
+}
 
 
+/* animaciones de la barra de progreso */
+main>.progreso>.paso>.num.active:after{
+    background-color: var(--texto-llamativo);
+    animation: movLinea 0.3s linear forwards ;
+    transform: scaleX(0); 
+    transform-origin: left;
+    /* la escala inicia en 0 y en la izquierda..
+    forwars (el estado final)
+     se redimensiona el elemento en horizontal; */
+
+}
+main>.progreso>.paso>.num.active{
+    border-color: var(--texto-llamativo);
+    background-color: var(--texto-llamativo);
+}
+main>.progreso>.paso>.num.active>span{
+    display: none;
+}
+main>.progreso>.paso>img.active{
+    display:block ;
+}
+main>.progreso>.paso>p.active{
+    color: var(--texto-llamativo);
+}
+@keyframes movLinea {
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+/* Para el mensaje ERROR */
+
+.error{
+    color:var(--texto-llamativo);
+    float: right;
+    text-align: right;
+}
+
+
+/* MENSAJES DE USUARIO CARGADO */
+main>.form-principal>form>.pagina>.contenedor-mensajes{
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: center;
+}
+
+main>.form-principal>form>.pagina>.contenedor-mensajes>.error-message {
+    /* display: none; */
+    color: var(--texto-blanco);
+    background: var(--fondo-llamativo);
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+  
+main>.form-principal>form>.pagina>.contenedor-mensajes>.sent-message {
+    display: none;
+    color: var(--texto-blanco);
+    background: var(--fondo-llamativo);
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+    border-radius: 50px;
+}
+  
+main>.form-principal>form>.pagina>.contenedor-mensajes> .loading {
+    display: none;
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 15px;
+    border-radius: 50px;
+}
+  
+main>.form-principal>form>.pagina>.contenedor-mensajes>.loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid  var(--fondo-llamativo);
+    border-top-color: var(--fondo-naranja-claro);
+    animation: animate-loading-notify 1s linear infinite;
+}
+@keyframes animate-loading-notify {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
 

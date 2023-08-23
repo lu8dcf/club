@@ -92,7 +92,7 @@
                 </li>
                                 
                 <li >
-                    <a href="#">Actividades</a>
+                    <a href="../deporte/deporte.php">Actividades</a>
                 </li>
                 <li >
                     <a  href="#">Carteleria</a>
